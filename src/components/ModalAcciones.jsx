@@ -7,6 +7,7 @@ function ModalAcciones({
   modalType,
   selectedPost,
   manageData,
+  loadingModal,
   setManageData,
   handleConfirmAction,
 }) {
@@ -56,7 +57,7 @@ function ModalAcciones({
         <Button className="btn-cancel" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button className="btn-custom" onClick={handleConfirmAction}>
+        <Button className="btn-custom" disabled={loadingModal} onClick={handleConfirmAction}>
           Confirmar
         </Button>
       </Modal.Footer>

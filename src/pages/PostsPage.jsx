@@ -86,29 +86,45 @@ useEffect(() => {
     setShowModal(true);
   };
 
-    const handleConfirmAction = async () => {
-    try {
-      if (modalType === "delete") {
-        await dispatch(deletePost(selectedPost.id)).unwrap();
-        toast.success(`Registro "${selectedPost.name}" eliminado correctamente`);
-      } else if (modalType === "edit") {
-        await dispatch(updatePost({ id: selectedPost.id, data: manageData })).unwrap();
-        toast.success(`Registro "${manageData.name}" editado correctamente`);
-      } else if (modalType === "create") {
-        await dispatch(createPost(manageData)).unwrap();
-        toast.success(`Nuevo registro "${manageData.name}" creado correctamente`);
-      }
-    } catch (err) {
-      if (err.message === "401") {
-        localStorage.clear();
-        navigate("/");
-      } else {
-        toast.error("Error al realizar la acción");
-        console.error(err);
-      }
+const actions = {
+  edit: async () => {
+    await dispatch(updatePost({ id: selectedPost.id, data: manageData })).unwrap();
+    toast.success(`Registro "${manageData.name}" editado correctamente`);
+  },
+  create: async () => {
+    await dispatch(createPost(manageData)).unwrap();
+    toast.success(`Nuevo registro "${manageData.name}" creado correctamente`);
+  },
+  delete: async () => {
+    await dispatch(deletePost(selectedPost.id)).unwrap();
+    toast.success(`Registro "${selectedPost.name}" eliminado correctamente`);
+  }
+};
+
+const handleConfirmAction = async () => {
+  try {
+    if (
+      modalType !== "delete" &&
+      (!manageData.name.trim() || !manageData.description.trim())
+    ) {
+      toast.warning("No puedes ingresar información vacía", { position: "top-center", autoClose: 1000 });
+      return;
     }
-      setShowModal(false);
-    };
+
+    await actions[modalType]?.();
+    setShowModal(false);
+    
+  } catch (err) {
+    if (err.message === "401") {
+      localStorage.clear();
+      navigate("/");
+    } else {
+      toast.error("Error al realizar la acción, intenta más tarde");
+      console.error(err);
+    }
+  }
+};
+
 
     const handleSort = (field) => {
         if (sortField === field) {
@@ -143,6 +159,7 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
             modalType={modalType}
             selectedPost={selectedPost}
             manageData={manageData}
+            loadingModal={loading}
             setManageData={setManageData}
             handleConfirmAction={handleConfirmAction}
         />
