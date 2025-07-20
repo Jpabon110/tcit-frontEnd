@@ -1,12 +1,37 @@
-# React + Vite
+# TCIT Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un frontend desarrollado con **React + Vite** para consumir el backend del challenge.  
+La aplicación permite iniciar sesión con un usuario de prueba y visualizar posts desde el backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 **Requisitos previos**
 
-## Expanding the ESLint configuration
+Antes de correr este proyecto, asegúrate de tener:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Node.js 18.x o 20.x (recomendado 18 LTS)**  
+  - Verifica tu versión con:
+    ```bash
+    node -v
+    ```
+- **npm 9.x o superior**  
+  - Verifica tu versión con:
+    ```bash
+    npm -v
+    ```
+- Acceso al backend en ejecución (consulta el README del backend).
+
+---
+
+✅ **Solución aplicada**: se ha fijado la versión estable de **Vite 5.4.10** y **@vitejs/plugin-react 4.3.1**, que funcionan correctamente en todos los entornos.
+
+1. **Colocar variables de entorno**
+ VITE_URL_SIGNIN=http://localhost:3000
+
+2. **Instalar dependencias**  
+  npm install
+
+3. **correr el proyecto**  
+  npm run dev
+
+---
