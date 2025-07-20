@@ -26,6 +26,7 @@ Antes de correr este proyecto, asegúrate de tener:
 ✅ **Solución aplicada**: se ha fijado la versión estable de **Vite 5.4.10** y **@vitejs/plugin-react 4.3.1**, que funcionan correctamente en todos los entornos.
 
 1. **Colocar variables de entorno**
+ Crea un archivo .env en la raiz del proyecto y agregale la siguiente variable
  VITE_URL_SIGNIN=http://localhost:3000
 
 2. **Instalar dependencias**  
