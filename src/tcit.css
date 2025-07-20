@@ -1,0 +1,36 @@
+.btn-custom {
+  background-color: #00b5a2 !important;
+  border-color: #00b5a2 !important;
+  color: white !important;
+  border-radius: 10px;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+  background-color: #0a182e !important;
+  color: white !important;
+}
+
+.btn-cancel {
+  background-color: white !important;
+  color: #00b5a2 !important;
+  border: 1px solid #00b5a2 !important;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus {
+  background-color: #00b5a2 !important;
+  color: white !important;
+}
+
+.pagination .page-item .page-link {
+  background-color: #00b5a2 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item.active .page-link {
+  background-color: #0a182e !important;
+  color: white !important;
+}
