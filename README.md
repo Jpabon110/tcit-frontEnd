@@ -3,6 +3,9 @@
 Este proyecto es un frontend desarrollado con **React + Vite** para consumir el backend del challenge.  
 La aplicación permite iniciar sesión con un usuario de prueba y visualizar posts desde el backend.
 
+[prueba de challenge.webm](https://github.com/user-attachments/assets/56e0ce42-fcb9-487f-8667-e2044ba572e3)
+
+
 ---
 
 ## 🚀 **Requisitos previos**
